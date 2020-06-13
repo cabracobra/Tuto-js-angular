@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container">
+  <a class="navbar-brand" href="#">ANGULAR PRUEBA</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/task" routerLinkActive="active" >PUBLIC</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/private" routerLinkActive="active">PRIVADO</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <ng-container *ngIf="!AuthService.loggedIn(); else LoggedIn">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">LOGIN</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link "routerLink="/registro" routerLinkActive="active">REGISTER</a>
+        </li>
+      </ng-container>
+      <ng-template #LoggedIn>
+        <li class="nav-item">
+         <a class="nav-link" style="cursor:pointer;" (click)="AuthService.logout()">L0G0UT</a>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<div class="container p-3">
+  <router-outlet></router-outlet>
+</div>

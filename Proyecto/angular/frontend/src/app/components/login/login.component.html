@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md4-mx-auto">
+        <div class="card">
+            <div class="card-header">
+                L0G1N
+                <div class="card-body">
+                    <form (submit)="signIn()">
+                        <div class="form-group">
+                            <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="email" required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" [(ngModel)]="user.password"  name="password" class="form-control" placeholder="password" required>
+                        </div>
+                        <button type="submit" class="btn-primary btn-block">LOGIN</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
